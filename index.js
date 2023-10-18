@@ -1,14 +1,14 @@
 const express = require("express");
 const port = 3000;
-const cors = require("cors");
 const app = express();
 const response = require("./response");
 const routes = require("./routes");
 
-app.use(express.json());
+const cors = require("cors");
 app.use(cors());
+app.use(express.json());
 app.get("/", (req, res) => {
-  response(200, "", "sales api", res);
+  response(200, "", "aktual dan target sales api", res);
 });
 
 app.use("/api", routes);
