@@ -3,7 +3,7 @@ const port = 3000;
 const app = express();
 const response = require("./response");
 const salesRoutes = require("./salesRoutes");
-// const productionRoutes = require("./productionRoutes")
+const productionRoutes = require("./productionRoutes")
 
 app.use(express.json());
 app.get("/", (req, res) => {
@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 app.use("/api", salesRoutes);
 
 //productions's api
-// app.use("/api", productionRoutes)
+app.use("/api", productionRoutes)
 
 app.listen(port, () => {
   console.log(`server listen on port ${port}`);
