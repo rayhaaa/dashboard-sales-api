@@ -1,4 +1,4 @@
-const {getAktualSales, getTargetSales, getTotalTargetSales} = require("../database");
+const {getAktualSales, getTargetSales, getTotalSales} = require("../database");
 const response = require("../response");
 
 const getAktualSalesController = async (req, res) => {
@@ -23,9 +23,9 @@ const getTargetSalesController = async (req, res) => {
   }
 };
 
-const getTotalTargetSalesController = async (req, res) => {
+const getTotalSalesController = async (req, res) => {
   try {
-    let result = await getTotalTargetSales();
+    let result = await getTotalSales();
 
     response(200, result, "data total sales", res);
   } catch (error) {
@@ -34,4 +34,4 @@ const getTotalTargetSalesController = async (req, res) => {
   }
 };
 
-module.exports = { getAktualSalesController, getTargetSalesController, getTotalTargetSalesController };
+module.exports = { getAktualSalesController, getTargetSalesController, getTotalSalesController };
