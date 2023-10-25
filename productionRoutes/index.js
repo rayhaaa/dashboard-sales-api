@@ -27,7 +27,6 @@ router.get('/cnc-2', getDataCncDuaController)
 // Menampilkan data produksi line cnc 3 hari ini
 router.get('/cnc-3', getDataCncTigaController)
 
-
 // Menampilkan data produksi per mesin di semua line hari ini
 router.get('/line', getAllLineController)
 

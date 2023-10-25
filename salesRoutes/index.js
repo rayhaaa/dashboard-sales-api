@@ -10,28 +10,29 @@ const {
 router.get("/aktualSales", getAktualSalesController);
 router.get("/targetSales", getTargetSalesController);
 router.get("/totalSales", getTotalSalesController);
-router.get("/sales", eachCustomerController);
+router.get("/detailCustomer", eachCustomerController);
 
-router.get(
-  "/:namaCustomer/:itemCode/:quantity/:price/:totalUSD",
-  function (req, res) {
-    res.send(req.params);
+// router.get(`/:namaCustomer/:itemCode/:targetQty/:aktualQty/:totalTarget/:aktualTarget`,
+//   function (req, res) {
+//     res.send(req.params);
+//     const eachCustomer = req.params;
 
-    // let name = req.params.namaCustomer;
-    // let itemCode = req.params.itemCode;
-    // let qty = req.params.quantity;
-    // let price = req.params.price;
-    // let totalUSD = req.params.totalUSD;
-    // console.log(`namaCustomer : ${name}`);
-    // console.log(`itemCode : ${itemCode}`);
-    // console.log(`quantity : ${qty}`);
-    // console.log(`price per part : ${price}`);
-    // console.log(`total sales (in USD) : ${totalUSD}`);
+//     console.log(eachCustomer)
+//   },
+//   eachCustomerController
+// );
 
-    const eachCustomer = req.params;
-    console.log(eachCustomer);
-  },
-  eachCustomerController
-);
+// router.get("/:namaCustomer/:itemCode/:targetQty/:aktualQty/:totalTarget/:aktualTarget", function(req , res){
+//   sql.connect(sqlConfig, function() {
+//   var request = new sql.Request();
+//   var stringRequest = "INSERT INTO dbo.NSI_LIVE_USD(namaCustomer, itemCode, targetQty, aktualQty, totaltarget, aktualTarget) VALUES ('"+ req.params.name +"','"+ req.params.category+"','"+ req.params.color+"','"+ req.params.description+"','"+req.params.numberOfUsage+"','"+req.params.size+"','"+req.params.status+"')";
+//   console.log(stringRequest)
+//   request.query(stringRequest, function(err, recordset) {
+//       if(err) console.log(err);
+//       res.end(JSON.stringify(recordset)); // Result in JSON format
+//       });
+//   });
+// })
+
 
 module.exports = router;
